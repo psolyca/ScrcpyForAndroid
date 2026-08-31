@@ -6,9 +6,9 @@ android {
     namespace 'org.client.scrcpy'
     flavorDimensions = ["default"]
 
-    compileSdkVersion 31
+    compileSdkVersion 19
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 31
         versionCode 14
         versionName "1.5.1"
