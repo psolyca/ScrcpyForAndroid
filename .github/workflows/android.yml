@@ -31,16 +31,16 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew assembleScrcpyRelease
+      run: ./gradlew assemble
       env:
         SIGNING_STORE_PASSWORD: ${{ secrets.KEY_STORE_PASSWORD }}
         SIGNING_KEY_ALIAS: ${{ secrets.ALIAS }}
         SIGNING_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
 
-    - name: Upload Signed Release APK
+    - name: Upload Unsigned Release APK
       uses: actions/upload-artifact@v4
       with:
-        name: ScrcpyForAndroid-signed-release
+        name: ScrcpyForAndroid-unsigned
         path: |
           app/build/outputs/apk/scrcpy/release/*.apk
         retention-days: 90  # Sets the artifact retention period to 90 days.
